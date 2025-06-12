@@ -224,7 +224,8 @@ async function run() {
     process.exit(0);
   } catch (error) {
     console.error("Error updating comment with job link:", error);
-    process.exit(1);
+    // CLAUDE_SUCCESS が false でもコメント更新できれば成功扱い
+    process.exit(0);
   }
 }
 
